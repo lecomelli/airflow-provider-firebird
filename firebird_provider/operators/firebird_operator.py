@@ -23,7 +23,7 @@ from airflow.providers.firebird.hooks.firebird import FirebirdHook
 
 class FirebirdOperator(BaseOperator):
     """
-    Executes sql code in a specific Sqlite database
+    Executes sql code in a specific firebird database
 
     .. seealso::
         For more information on how to use this operator, take a look at the guide:
@@ -40,7 +40,7 @@ class FirebirdOperator(BaseOperator):
     template_fields: Sequence[str] = ('sql',)
     template_ext: Sequence[str] = ('.sql',)
     template_fields_renderers = {'sql': 'sql'}
-    ui_color = '#cdaaed'
+    ui_color = '#E82020'
 
     def __init__(
         self,

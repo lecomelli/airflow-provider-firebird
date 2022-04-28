@@ -16,24 +16,24 @@
 # specific language governing permissions and limitations
 # under the License.
 
-import sqlite3
+import fdb
 
 from airflow.hooks.dbapi import DbApiHook
 
 
 class FirebirdHook(DbApiHook):
-    """Interact with SQLite."""
+    """Interact with Firebird."""
 
-    conn_name_attr = 'sqlite_conn_id'
-    default_conn_name = 'sqlite_default'
-    conn_type = 'sqlite'
-    hook_name = 'Sqlite'
+    conn_name_attr = 'firebird_conn_id'
+    default_conn_name = 'firebird_default'
+    conn_type = 'firebird'
+    hook_name = 'Firebird'
 
-    def get_conn(self) -> sqlite3.dbapi2.Connection:
-        """Returns a sqlite connection object"""
+    def get_conn(self) -> fdb.Connection:
+        """Returns a firebird connection object"""
         conn_id = getattr(self, self.conn_name_attr)
         airflow_conn = self.get_connection(conn_id)
-        conn = sqlite3.connect(airflow_conn.host)
+        conn = fdb.connect(airflow_conn.host)
         return conn
 
     @staticmethod

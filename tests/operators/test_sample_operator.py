@@ -18,7 +18,7 @@ import unittest
 from unittest import mock
 
 # Import Operator
-from sample_provider.operators.sample_operator import SampleOperator
+from firebird_provider.operators.sample_operator import SampleOperator
 
 
 log = logging.getLogger(__name__)

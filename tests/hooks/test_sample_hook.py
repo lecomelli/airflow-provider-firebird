@@ -17,7 +17,7 @@ import unittest
 from unittest import mock
 
 # Import Hook
-from sample_provider.hooks.sample_hook import SampleHook
+from firebird_provider.hooks.sample_hook import SampleHook
 
 
 log = logging.getLogger(__name__)
